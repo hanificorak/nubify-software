@@ -10,8 +10,6 @@
     <meta name="keywords" content="nubify,nubify softare,pflege plan,bulut yazılım,yazılım firması,yazılım şirketi">
 
     <!-- Favicons -->
-    <link href="/template/assets/img/favicon.png" rel="icon">
-    <link href="/template/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
