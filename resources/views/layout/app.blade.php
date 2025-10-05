@@ -1,22 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Nubify Software | {{ $title }}</title>
-    <meta name="description" content="Nubify Software sağlık alanında bulut yazılım çözümleri ile önde gelen yazılım firmasıdır. Pflege Plan uygulaması ile global bir sağlık uygulaması çözümü sunuyor.">
-    <meta name="keyword" content="nubify,nubify softare,pflege plan,bulut yazılım,yazılım firması,yazılım şirketi">
-    <meta name="keywords" content="nubify,nubify softare,pflege plan,bulut yazılım,yazılım firması,yazılım şirketi">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{{ $title }}</title>
+    <meta name="description" content="{{ $description }}" />
+    <meta name="keywords" content="{{ $keywords }}" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ url()->current() }}" />
 
     <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/template/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/template/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/template/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:title" content="{{ $title }}" />
+    <meta property="og:description" content="{{ $description }}" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ url()->current() }}" />
+    <meta property="twitter:title" content="{{ $title }}" />
+    <meta property="twitter:description" content="{{ $description }}" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="/template/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,27 +45,78 @@
 
     <!-- Main CSS File -->
     <link href="/template/assets/css/main.css" rel="stylesheet">
+    <link href="/template/custom_temp.css?ver=1" rel="stylesheet">
 
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Nubify Software",
+        "url": "https://nubifysoftware.com",
+        "logo": "{{ asset('/template/assets/img/logo.png') }}",
+        "description": "İşletmeler için özel yazılım çözümleri üreten teknoloji şirketi",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Avcılar, 1001. Sk. No:6A/1",
+            "addressLocality": "Yenimahalle",
+            "addressRegion": "Ankara",
+            "postalCode": "06280",
+            "addressCountry": "TR"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+90-542-671-1046",
+            "contactType": "customer service",
+            "email": "hanificorak@outlook.com",
+            "availableLanguage": ["Turkish", "German", "English"]
+        },
+        "sameAs": [
+            "https://twitter.com/nubifysoftware",
+            "https://www.facebook.com/nubifysoftware",
+            "https://www.linkedin.com/company/nubifysoftware",
+            "https://www.instagram.com/nubifysoftware"
+        ],
+        "knowsAbout": [
+            "Kurumsal Yazılım Geliştirme",
+            "Özel Yazılım Çözümleri",
+            "Bulut Teknolojileri",
+            "Dijital Dönüşüm",
+            "Sağlık Yazılımları",
+            "İşletme Yazılımları"
+        ]
+    }
+    </script>
 
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Ana Sayfa",
+            "item": "https://nubifysoftware.com"
+        }]
+    }
+    </script>
 </head>
 
 <body class="index-page">
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
             <a href="/" class="logo d-flex align-items-center me-auto">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
-                <img src="/template/assets/img/logo.png" alt="">
+                <img src="/template/assets/img/logo.png" alt="Nubify Software Logo">
                 <h1 class="sitename">Nubify Software</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="/" class="active">Ana Sayfa<br></a></li>
-                    <li><a href="/about">Hakkımızda</a></li>
-                    <li><a href="/services">Hizmetler</a></li>
-                    <li><a href="/products">Ürünlerimiz</a></li>
-
+                    <li><a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Ana Sayfa</a></li>
+                    <li><a href="/about" class="{{ request()->is('about') ? 'active' : '' }}">Hakkımızda</a></li>
+                    <li><a href="/services" class="{{ request()->is('services') ? 'active' : '' }}">Hizmetler</a></li>
+                    <li><a href="/products" class="{{ request()->is('products') ? 'active' : '' }}">Ürünlerimiz</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -56,96 +125,227 @@
     </header>
 
     <main class="main">
-         @yield('content')
+        @yield('content')
     </main>
 
+    <footer id="footer" class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-info" data-aos="fade-up" data-aos-delay="100">
+                            <div class="footer-logo">
+                                <h3>Nubify Software</h3>
+                            </div>
+                            <p class="footer-description">
+                                İşletmeniz için özel yazılım çözümleri üreten teknoloji şirketi. Modern ve yenilikçi yaklaşımlarla işletmenizi geleceğe taşıyoruz.
+                            </p>
+                            <div class="footer-contact">
+                                <div class="contact-item">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <div>
+                                        <h4>Adres</h4>
+                                        <p>Avcılar, 1001. Sk. No:6A/1, 06280 Yenimahalle/Ankara</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="bi bi-telephone"></i>
+                                    <div>
+                                        <h4>Telefon</h4>
+                                        <p><a href="tel:+905426711046">+90 542 671 1046</a></p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="bi bi-envelope"></i>
+                                    <div>
+                                        <h4>E-posta</h4>
+                                        <p><a href="mailto:hanificorak@outlook.com">hanificorak@outlook.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-  <footer id="footer" class="footer">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-links" data-aos="fade-up" data-aos-delay="200">
+                            <h4>Hızlı Erişim</h4>
+                            <ul>
+                                <li><a href="/"><i class="bi bi-chevron-right"></i>Ana Sayfa</a></li>
+                                <li><a href="/about"><i class="bi bi-chevron-right"></i>Hakkımızda</a></li>
+                                <li><a href="/services"><i class="bi bi-chevron-right"></i>Hizmetlerimiz</a></li>
+                                <li><a href="/products"><i class="bi bi-chevron-right"></i>Ürünlerimiz</a></li>
+                                <li><a href="/contact"><i class="bi bi-chevron-right"></i>İletişim</a></li>
+                                <li><a href="/kvkk"><i class="bi bi-chevron-right"></i>KVKK</a></li>
+                                <li><a href="https://pflegeplan.online/"><i class="bi bi-chevron-right"></i>Pflege Plan | Hasta & Bakım Takibi</a></li>
+                            </ul>
+                        </div>
+                    </div>
 
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-6">
-            <h4>Kampanyalarımızdan haberdar olun.</h4>
-            <p>E-Posta adresinizi girin ve kampanyalarımızdan ilk siz haberdar olur.</p>
-            <form action="forms/newsletter.php" method="post" class="php-email-form">
-              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Abone Ol"></div>
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-            </form>
-          </div>
+               
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-social" data-aos="fade-up" data-aos-delay="400">
+                            <h4>Bizi Takip Edin</h4>
+                            <p>Sosyal medyadan bizleri takip ederek güncel gelişmelerden haberdar olun.</p>
+                            <div class="social-links">
+                                <a href="https://twitter.com/nubifysoftware" target="_blank" rel="noopener" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                                <a href="https://www.facebook.com/nubifysoftware" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                                <a href="https://www.instagram.com/nubifysoftware" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="https://www.linkedin.com/company/nubifysoftware" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>&copy; <span>{{ date('Y') }}</span> <strong>Nubify Software</strong>. Tüm hakları saklıdır.</p>
+                    <div class="credits">
+                        <a href="/kvkk">KVKK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Top Button -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Sayfa başına dön"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="/template/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/template/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/template/assets/vendor/aos/aos.js"></script>
+    <script src="/template/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/template/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="/template/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="/template/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/template/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="/template/assets/js/main.js"></script>
+
+    <!-- Cookie Consent Popup -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-content">
+            <p>Bu web sitesi, size en iyi deneyimi sunmak için çerezleri kullanmaktadır. Daha fazla bilgi için <a href="/kvkk">KVKK Aydınlatma Metni</a>'ni inceleyebilirsiniz.</p>
+            <div class="cookie-buttons">
+                <button id="acceptCookies" class="btn btn-primary">Kabul Et</button>
+                <button id="rejectCookies" class="btn btn-outline-secondary">Reddet</button>
+            </div>
+        </div>
     </div>
 
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="d-flex align-items-center">
-            <span class="sitename">Nubify Software</span>
-          </a>
-          <div class="footer-contact pt-3">
-            {{-- <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p> --}}
-            <p><strong>Email:</strong> <span>hanificorak@outlook.com</span></p>
-          </div>
-        </div>
+    <style>
+    
+    </style>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Sayfalar</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="/">Ana Sayfa</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="/about">Hakkımızda</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="/services">Hizmetlerimiz</a></li>
-          </ul>
-        </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieConsent = document.getElementById('cookieConsent');
+            const acceptCookies = document.getElementById('acceptCookies');
+            const rejectCookies = document.getElementById('rejectCookies');
 
-        <div class="col-lg-2 col-md-3 footer-links">
-        
-        </div>
+            // Çerez tercihini kontrol et
+            const cookiePreference = localStorage.getItem('cookiePreference');
+            
+            if (!cookiePreference) {
+                // Tercih yoksa popup'ı göster
+                setTimeout(() => {
+                    cookieConsent.style.display = 'block';
+                }, 1000);
+            }
 
-        <div class="col-lg-4 col-md-12">
-          <h4>Takip Edin</h4>
-          <p>Sosyal medyadan bizleri takip edebilirsiniz.</p>
-          <div class="social-links d-flex">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
+            // Kabul et butonu
+            acceptCookies.addEventListener('click', function() {
+                localStorage.setItem('cookiePreference', 'accepted');
+                cookieConsent.style.display = 'none';
+            });
 
-      </div>
-    </div>
+            // Reddet butonu
+            rejectCookies.addEventListener('click', function() {
+                localStorage.setItem('cookiePreference', 'rejected');
+                cookieConsent.style.display = 'none';
+            });
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Nubify Software</strong> <span>Tüm hakları saklıdır.</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://nubifysoftware.com/">Nubify Software</a>
-      </div>
-    </div>
+            // Professional Navbar Functionality
+            const header = document.getElementById('header');
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const navmenu = document.getElementById('navmenu');
 
-  </footer>
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+            // Mobile navigation toggle
+            if (mobileNavToggle && navmenu) {
+                const mobileNavClose = navmenu.querySelector('.mobile-nav-close');
+                
+                mobileNavToggle.addEventListener('click', function() {
+                    navmenu.classList.add('mobile-nav-active');
+                    document.body.classList.add('nav-open');
+                });
 
-  <!-- Vendor JS Files -->
-  <script src="/template/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/template/assets/vendor/php-email-form/validate.js"></script>
-  <script src="/template/assets/vendor/aos/aos.js"></script>
-  <script src="/template/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="/template/assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="/template/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="/template/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/template/assets/vendor/swiper/swiper-bundle.min.js"></script>
+                // Close mobile menu when clicking close button
+                if (mobileNavClose) {
+                    mobileNavClose.addEventListener('click', function() {
+                        navmenu.classList.remove('mobile-nav-active');
+                        document.body.classList.remove('nav-open');
+                    });
+                }
 
-  <!-- Main JS File -->
-  <script src="/template/assets/js/main.js"></script>
+                // Close mobile menu when clicking on a link
+                const navLinks = navmenu.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navmenu.classList.remove('mobile-nav-active');
+                        document.body.classList.remove('nav-open');
+                    });
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navmenu.contains(event.target) && !mobileNavToggle.contains(event.target)) {
+                        navmenu.classList.remove('mobile-nav-active');
+                        document.body.classList.remove('nav-open');
+                    }
+                });
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add loading animation to buttons
+            const buttons = document.querySelectorAll('.btn-getstarted');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (!this.href.includes('#')) {
+                        this.style.transform = 'scale(0.98)';
+                        setTimeout(() => {
+                            this.style.transform = '';
+                        }, 150);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
+</html>

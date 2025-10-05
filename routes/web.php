@@ -1,28 +1,18 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    view()->share('title', "Ana Sayfa - Bulut Yazılım Çözümleri");
-    return view('home.index');
-});
-Route::get('/about', function () {
-    view()->share('title', "Hakkımızda - Bulut Yazılım Çözümleri");
 
-    return view('about.index');
-});
-Route::get('/services', function () {
-    view()->share('title', "Hizmetlerimiz - Bulut Yazılım Çözümleri");
 
-    return view('services.index');
-});
-Route::get('/contact', function () {
-    view()->share('title', "İletişim - Bulut Yazılım Çözümleri");
+Route::get('/', [PageController::class, 'index']);
+Route::get('/about', [PageController::class, 'about']);
+Route::get('/services', [PageController::class, 'services']);
+Route::get('/contact', [PageController::class, 'contact']);
+Route::get('/products', [PageController::class, 'products']);
+Route::get('/kvkk', [PageController::class, 'kvkk'])->name('kvkk');
 
-    return view('contact.index');
-});
-Route::get('/products', function () {
-    view()->share('title', "Ürünlerimiz - Bulut Yazılım Çözümleri");
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-    return view('products.index');
-});
+
